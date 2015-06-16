@@ -112,7 +112,7 @@ module.exports = function (grunt) {
                 engine: 'handlebars',
                 cwd: 'handlebars/tpl/',
                 partials: ['handlebars/tpl/fixtures/**/*.hbs'],
-                //data: 'src/templates/data.json',
+                data: 'handlebars/tpl/data.json',
                 options: {},
                 files: [{
                     expand: true,
