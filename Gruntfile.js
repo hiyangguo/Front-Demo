@@ -20,25 +20,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         config: config,
         pkg: grunt.file.readJSON('package.json'),
-        /**
-         * [template 编译html 模板引擎handlebars]
-         */
-        template: {
-            dev: {
-                engine: 'handlebars',
-                cwd: 'handlebars/tpl/',
-                partials: ['handlebars/tpl/*.hbs'],
-                //data: 'src/templates/data.json',
-                options: {},
-                files: [{
-                    expand: true,
-                    cwd:'handlebars/tpl/',
-                    src: ['*.hbs'],
-                    dest: 'handlebars/',
-                    ext: '.html'
-                }]
-            }
-        },
         copy: {
             dist_all: {
                 files: [
@@ -122,6 +103,25 @@ module.exports = function (grunt) {
                 expand: true
             },
             server: '.temp'
+        },
+        /**
+         * [template 编译html 模板引擎handlebars]
+         */
+        template: {
+            dev: {
+                engine: 'handlebars',
+                cwd: 'handlebars/tpl/',
+                partials: ['handlebars/tpl/fixtures/**/*.hbs'],
+                //data: 'src/templates/data.json',
+                options: {},
+                files: [{
+                    expand: true,
+                    cwd:'handlebars/tpl/',
+                    src: ['*.hbs'],
+                    dest: 'handlebars/',
+                    ext: '.html'
+                }]
+            }
         }
     });
 
