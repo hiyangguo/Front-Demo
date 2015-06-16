@@ -1,0 +1,42 @@
+@charset "utf-8";
+/*
+    * Busy 收集 整理
+ */
+/*雅虎（YUI 3）reset*/
+/*Normalize.css*/
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+}
+input,
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial,Helvetica,STHeiti;
+}
+input,
+textarea,
+select {
+  font-family: arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial,Helvetica,STHeiti;
+}
+.redColor {
+  background: lightcoral;
+  color: white;
+  /* font-size: 18px; */
+}
+/*# sourceMappingURL=index.css.map */

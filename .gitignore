@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+#common file#
+.idea/
+/node_modules/
