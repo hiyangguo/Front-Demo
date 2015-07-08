@@ -59,6 +59,8 @@ define(function (require, exports, module) {
 		return this;
 	}
 
+	$("1").hover();
+
 	function random(x) { //返回一个随机数
 		return Math.random() * x;
 	};
