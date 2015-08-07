@@ -8,3 +8,4 @@
 #common file#
 .idea/
 /node_modules/
+nodejs/node_modules
