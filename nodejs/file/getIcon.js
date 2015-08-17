@@ -46,11 +46,13 @@ function getImg(httpPath) {
 function mkdirsSync(dirpath) {
     //console.log(dirname);
     if (fs.existsSync(dirpath)) {
+        console.log("文件夹路径已存在");
         return true;
     }
 
     if (mkdirsSync(path.dirname(dirpath))) {
         fs.mkdirSync(dirpath);
+        console.log("文件夹路径创建成功");
         return true;
     }
 
