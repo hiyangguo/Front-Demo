@@ -8,4 +8,5 @@
 #common file#
 .idea/
 /node_modules/
+/gitBookTest/_book
 nodejs/node_modules
