@@ -1,0 +1,5 @@
+/* line 6, ../sass/css3.scss */
+.test-box-shadow {
+  -webkit-box-shadow: 1px 1px 3px 2px #cfcecf;
+  box-shadow: 1px 1px 3px 2px #cfcecf;
+}

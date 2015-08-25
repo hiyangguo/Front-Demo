@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*base*/
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+/* line 11, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 19, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+body {
+  margin: 0;
+}
+
+/*html5*/
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 29, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 40, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 47, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/*!
+ * CONTENTS
+ *
+ * SETTINGS
+ * variables..............变量集中存储文件
+ * mixin..................mixin集中存储文件
+ *
+ * TOOLS
+ *
+ * COMPONENTS
+ * reset.................Compass内置浏览器重置样式文件
+ *
+ * BUSINESS
+ *
+ * BASE
+ * screen.................针对当前站点主页的样式修饰
+ */
+/* line 30, ../sass/screen.scss */
+.headline {
+  font-family: Braggadocio, Arial, Verdana, Helvetica, sans-serif;
+}
+
+/*页面主体样式*/
+/* line 35, ../sass/screen.scss */
+.main-sec {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+/* line 39, ../sass/screen.scss */
+.main-sec-headline {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* line 46, ../sass/screen.scss */
+.main-sec-detail {
+  font-size: 12px;
+}
+
+/* line 52, ../sass/screen.scss */
+p {
+  color: #8000ff;
+}
+
+/*使用mixin*/
+@media (min-width: 768px) {
+  /* line 57, ../sass/screen.scss */
+  .web-demo-sec {
+    width: 50%;
+    float: left;
+  }
+}
+/* line 60, ../sass/screen.scss */
+.web-demo-sec:hover {
+  background-color: #f5f5f5;
+}
+
+/*选择器样式的继承*/
+/* line 66, ../sass/screen.scss */
+.serious-error, .most-serious-error {
+  color: #f00;
+}
+
+/* line 70, ../sass/screen.scss */
+.instrusion.serious-error, .instrusion.most-serious-error {
+  background-image: url("/images/hacked.png");
+}
+
+/* line 74, ../sass/screen.scss */
+.serious-error, .most-serious-error {
+  border: 1px #f00;
+}
+
+/* line 79, ../sass/screen.scss */
+.most-serious-error {
+  background: #fffff5;
+}
