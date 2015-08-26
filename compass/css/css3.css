@@ -1,5 +1,20 @@
-/* line 6, ../sass/css3.scss */
+/* line 7, ../sass/css3.scss */
 .test-box-shadow {
   -webkit-box-shadow: 1px 1px 3px 2px #cfcecf;
   box-shadow: 1px 1px 3px 2px #cfcecf;
+}
+
+/* line 11, ../sass/css3.scss */
+.test-inline-block {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 15, ../sass/css3.scss */
+.test-opacity {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
 }

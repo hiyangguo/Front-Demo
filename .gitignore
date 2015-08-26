@@ -9,4 +9,6 @@
 .idea/
 /node_modules/
 /gitBookTest/_book
+/sass/.sass-cache
+/compass/.sass-cache
 nodejs/node_modules
