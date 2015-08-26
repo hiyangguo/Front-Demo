@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     var config = {
-        app: 'gallery',
+        app: 'compass',
         dist: 'dist',
         server:{
             port: 9000,
@@ -78,6 +78,14 @@ module.exports = function (grunt) {
                     //ext: '.min.js'//修改后缀名
                 }]
             },
+            compass:{
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>',//css目录下
+                    src: ['**/*', '!sass/**/*', '!images/sprites/**/*','!images/retina-version/**/*'],//所有css文件
+                    dest: '<%= config.dist %>'//输出到此目录下
+                }]
+            }
         },
         //文件删除
         clean: {
@@ -122,20 +130,48 @@ module.exports = function (grunt) {
                     ext: '.html'
                 }]
             }
+        },
+        compass: {                  // Task
+            dist: {                   // Target
+                options: {              // Target options
+                    sassDir: '<%= config.app %>/sass',
+                    cssDir: '<%= config.app %>/css',
+                    environment: 'production'
+                }
+            },
+            dev: {                    // Another target
+                options: {
+                    sassDir: '<%= config.app %>/sass',
+                    cssDir: '<%= config.app %>/css',
+                    imagesDir:'<%= config.app %>/images',
+                    fontDir:'<%= config.app %>/fonts',
+                    outputStyle: 'expanded',
+                    debugInfo:true,
+                    noLineComments:false,
+                    environment: 'development'
+                }
+            }
         }
     });
 
 
     var taskDefault = [];
     taskDefault.push('template');
+    taskDefault.push('copy:dist_dev');
+
+    var taskCompass = [];
+    taskCompass.push('clean:dist')
+    taskCompass.push('compass:dev');
+    taskCompass.push('copy:compass');
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-template-html');
-
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     //创建dev工程
     grunt.registerTask('build_dev',taskDefault);
+    grunt.registerTask('build_compass',taskCompass);
 
 }

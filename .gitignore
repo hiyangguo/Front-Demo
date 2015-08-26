@@ -12,3 +12,7 @@
 /sass/.sass-cache
 /compass/.sass-cache
 nodejs/node_modules
+
+dist
+
+.sass-cache
