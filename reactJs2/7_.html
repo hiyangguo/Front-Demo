@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <title>组件的状态</title>
+</head>
+<body>
+<div id="app"></div>
+
+<!--script-->
+<script src="lib/react/react.js"></script>
+<script src="lib/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    var FormApp = React.createClass({
+        getInitialState: function () {
+            return {
+                inputValue: 'input value',
+                selectValue: 'A',
+                radioValue: 'B',
+                textareaValue: 'some text here...'
+            }
+        },
+        handleSubmit: function (e) {
+            e.preventDefault();
+            console.log('form submittiing');
+            console.log(e);
+        },
+        handleInput: function (e) {
+            this.setState({
+                inputValue: e.target.value
+            });
+        },
+        handleSelect: function (e) {
+            this.setState({
+                selectValue: e.target.value
+            });
+        },
+        render: function () {
+            //如果使用value则需要绑响应的change事件 否则将导致无法修改值
+            //如果想绑定默认值应使用defaultValue
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" value={this.state.inputValue} onChange={this.handleInput}/>
+                    <br/>
+                    <select value={this.state.selectValue} onChange={this.handleSelect}>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                    <p>radio button!</p>
+                    <input name="goodRadio" type="radio" value="A"/>
+                    <input name="goodRadio" type="radio" defaultChecked value="B"/>
+                    <input name="goodRadio" type="radio" value="c"/>
+                    <br/>
+                    <input name="goodRadio" type="checkbox" defaultChecked value="A"/>
+                    <input name="goodRadio" type="checkbox" value="B"/>
+                    <input name="goodRadio" type="checkbox" defaultChecked value="C"/>
+                    <br/>
+                    <textarea value={this.state.textareaValue}></textarea>
+                    <br/>
+                    <button type="submit">提交</button>
+                </form>
+            )
+        }
+    });
+
+    var formApp = React.render(<FormApp/>,
+        document.getElementById("app"),
+        function () {
+            console.log("渲染完成了")
+        });
+</script>
+</body>
+</html>
