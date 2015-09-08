@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
-    <title>组件的状态</title>
+    <title>组件的状态-装载、卸载</title>
 </head>
 <body>
 <div id="app"></div>
@@ -14,18 +14,41 @@
 <script type="text/jsx">
     var MessageBox = React.createClass({
         getInitialState: function () {
+            console.log('getInitialState')
             return {
-                isVisible:true,
-                count:"你好世界！！！（来自state哦）"
+                count: 0
             }
         },
+        getDefaultProps: function () {
+            console.log('getDefaultProps');
+            return {};
+        },
+        componentWillMount: function () {
+            console.log("componentWillMount");
+            var self = this;
+            this.timer = setInterval(function () {
+                self.setState({
+                    count: self.state.count + 1
+                });
+            }, 1000);
+        },
+        componentDidMount: function () {
+            console.log("componentDidMount");
+            console.log(this.getDOMNode());
+        },
+        componentWillUnmount: function () {
+            console.log("componentWillUnmount:you are trying to kill me");
+            clearInterval(this.timer);
+        },
+        killMyself: function () {
+            React.unmountComponentAtNode(document.getElementById("app"));
+        },
         render: function () {
-            var styleObj = {
-                display:this.state.isVisible? 'block' : 'none'
-            }
+            console.log("render");
             return (
                 <div>
-                    <h1 style={styleObj}>{this.state.count}</h1>
+                    <h1>计数:{this.state.count}</h1>
+                    <button onClick={this.killMyself}>卸载掉这个组件</button>
                     <SubMessage/>
                 </div>
             );
@@ -54,7 +77,7 @@
     })
 
 
-   var messageBox =  React.render(<MessageBox/>,
+    var messageBox = React.render(<MessageBox/>,
         document.getElementById("app"),
         function () {
             console.log("渲染完成了")

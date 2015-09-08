@@ -11,7 +11,7 @@ mkdirsSync(sPath);
 console.log(rmdirsSync(sPath));
 
 
-//µÝ¹é´´½¨Ä¿Â¼ Í¬²½·½·¨
+//ï¿½Ý¹é´´ï¿½ï¿½Ä¿Â¼ Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 function mkdirsSync(dirpath) {
     //console.log(dirname);
     if (fs.existsSync(dirpath)) {
@@ -25,7 +25,7 @@ function mkdirsSync(dirpath) {
 
 }
 
-//É¾³ýÄ¿Â¼
+//É¾ï¿½ï¿½Ä¿Â¼
 function rmdirsSync(dirpath) {
     //console.log(dirname);
     if (!fs.existsSync(dirpath)) {
