@@ -12,7 +12,11 @@
 /sass/.sass-cache
 /compass/.sass-cache
 nodejs/node_modules
-
 dist
-
 .sass-cache
+
+#reactJs2实战#
+/ReactJsNew_3_分享/node_modules
+/reactJsNew_2_实战/node_modules
+/reactJsNew_2_实战/bower_components
+/reactJs2_实战/node_modules
