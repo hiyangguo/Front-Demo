@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     var config = {
-        app: 'compass',
+        app: 'famibao',
         dist: 'dist',
         server:{
             port: 9000,
@@ -151,6 +151,28 @@ module.exports = function (grunt) {
                     environment: 'development'
                 }
             }
+        },
+        uglify:    {
+            /**
+             * [seajs 合并Seajs扩展文件，并混淆压缩]
+             */
+            seajs: {
+                files: {
+                    "src/lib/vendor/sea.js": ["src/lib/vendor/seajs/*.js"]
+                }
+            },
+            /**
+             * [all 混淆压缩所以的页面模块文件]
+             */
+            all:   {
+                files: [{
+                    expand: true,
+                    cwd:    'dist/',
+                    src:    ['**/*.js'],
+                    dest:   'dist/',
+                    ext:    '.js'
+                }]
+            }
         }
     });
 
@@ -169,6 +191,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-template-html');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     //创建dev工程
     grunt.registerTask('build_dev',taskDefault);
